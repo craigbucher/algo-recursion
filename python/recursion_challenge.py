@@ -13,9 +13,7 @@ def palindrome(string):
 		return False
 	return palindrome(string[1:-1])
 
-	
-
-print(palindrome('abcba'))	
+#print(palindrome('abcba'))	
 
 def bottles(num):
 	pass
