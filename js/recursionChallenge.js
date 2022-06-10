@@ -34,8 +34,19 @@ down pass it around, ${num - 1} more on the wall.`);
     exports.bottles(num - 1);
 };
 
-console.log(exports.bottles(99));
+//console.log(exports.bottles(99));
 
-exports.romanNum = function() {
-
+exports.romanNum = function(num) {
+    let BASE_CASES = {"": 0, "M": 1000, "D": 500, "C": 100, "L": 50, "X": 10, "V": 5, "I": 1};
+    if (num in BASE_CASES){
+        return BASE_CASES[num];
+    }
+    let first, second = map(roman_num, num.slice(0, 2)); // js equivalent???
+    if (first < second){
+        return(second - first + romanNum(num.slice(2)))
+    } else {
+        return(first + romanNum(num.slice(1)));
+    };
 };
+
+console.log(exports.romanNum('XX'));
