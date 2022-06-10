@@ -41,7 +41,8 @@ exports.romanNum = function(num) {
     if (num in BASE_CASES){
         return BASE_CASES[num];
     }
-    let first, second = map(roman_num, num.slice(0, 2)); // js equivalent???
+    let first = new Map(exports.romanNum); // js equivalent???
+    let second = num.slice(0, 2)
     if (first < second){
         return(second - first + romanNum(num.slice(2)))
     } else {
